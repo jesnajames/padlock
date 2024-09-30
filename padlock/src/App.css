@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.generate-btn {
+  background-color: #00ff00;
+  color: #2a2d34; 
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s; 
+}
+
+.generate-btn:hover {
+  background-color: #00cc00; /* Darker green on hover */
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+
+
+.password-display {
+  background-color: #2a2d34; /* Dark background for the password box */
+  border: 2px solid #39ff14; /* Neon green border */
+  border-radius: 0.375rem; /* Rounded corners */
+  padding: 1rem; /* Padding inside the box */
+  margin-top: 1.5rem; /* Space above the box */
+  display: flex; /* Flexbox layout */
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Space between the password text and icon */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.password-text {
+  flex-grow: 1; /* Allow text to grow to fill remaining space */
+  color: #ffffff; /* White text */
+   }
+
+/* Add hover effect for the copy icon */
+.copy-btn img {
+  width: 24px; /* Set width for the copy icon */
+  height: 24px; /* Set height for the copy icon */
+}
+
+
+.copy-btn {
+  background: transparent; /* Set the background to transparent */
+  border: none; /* Remove any borders */
+  padding: 5px; /* Remove padding */
+  width: 24px; /* Set width for the copy icon */
+}
+.spacer {
+  height: 10px; /* Adjust the height as needed to shift the button down */
+}
+
+.password-label {
+  display: flex; /* Flex layout for label and input */
+  align-items: center; /* Align items vertically */
+  margin-top: 1.5rem; /* Space above the label */
+}
+
+.password-input {
+  width: 20ch; /* Width of about 20 characters */
+  border: 2px solid #39ff14; /* Neon green border */
+  border-radius: 0.375rem; /* Rounded corners */
+  background-color: #2a2d34; /* Dark background */
+  color: #ffffff; /* White text */
+  padding: 0.5rem; /* Padding inside the input */
+  margin-left: 1rem; /* Space between label and input */
+  font-size: 16px; /* Font size for input */
+}
