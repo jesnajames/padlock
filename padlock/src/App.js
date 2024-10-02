@@ -175,7 +175,7 @@ function App() {
         message="Copied to clipboard!"
         action={
           <Button color="inherit" onClick={handleSnackbarClose}>
-            Close
+            X
           </Button>
         }
         autoHideDuration={800}

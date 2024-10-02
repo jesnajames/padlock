@@ -61,14 +61,13 @@ code {
 }
 
 .generate-btn:hover {
-  background-color: #00cc00; 
-  transform: scale(1.05);
+  background-color: #00cc00;
 }
 
 .password-display {
   background-color: #2a2d34; 
-  border: 2px solid #39ff14;
-  border-radius: 0.375rem; 
+  border: 2px solid #00ff00;
+  border-radius: 0.375rem;
   padding: 1rem;
   margin-top: 1.5rem; 
   display: flex; 
@@ -106,7 +105,7 @@ code {
 
 .password-input {
   width: 20ch; 
-  border: 2px solid #39ff14; 
+  border: 2px solid #00ff00;
   border-radius: 0.375rem;
   background-color: #2a2d34;
   color: #ffffff;
@@ -116,7 +115,7 @@ code {
 }
 
 .password-checklist input[type="checkbox"] {
-  accent-color: green;
+  accent-color: #00ff00;
 }
 
 .password-container {
