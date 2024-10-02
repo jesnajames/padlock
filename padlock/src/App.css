@@ -61,68 +61,66 @@ code {
 }
 
 .generate-btn:hover {
-  background-color: #00cc00; /* Darker green on hover */
-  transform: scale(1.05); /* Scale effect on hover */
+  background-color: #00cc00; 
+  transform: scale(1.05);
 }
 
 .password-display {
-  background-color: #2a2d34; /* Dark background for the password box */
-  border: 2px solid #39ff14; /* Neon green border */
-  border-radius: 0.375rem; /* Rounded corners */
-  padding: 1rem; /* Padding inside the box */
-  margin-top: 1.5rem; /* Space above the box */
-  display: flex; /* Flexbox layout */
-  align-items: center; /* Center vertically */
-  justify-content: space-between; /* Space between the password text and icon */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  background-color: #2a2d34; 
+  border: 2px solid #39ff14;
+  border-radius: 0.375rem; 
+  padding: 1rem;
+  margin-top: 1.5rem; 
+  display: flex; 
+  align-items: center;
+  justify-content: space-between; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .password-text {
-  flex-grow: 1; /* Allow text to grow to fill remaining space */
-  color: #ffffff; /* White text */
+  flex-grow: 1;
+  color: #ffffff;
 }
 
-/* Add hover effect for the copy icon */
 .copy-btn img {
-  width: 24px; /* Set width for the copy icon */
-  height: 24px; /* Set height for the copy icon */
+  width: 24px; 
+  height: 24px;
 }
 
 .copy-btn {
-  background: transparent; /* Set the background to transparent */
-  border: none; /* Remove any borders */
-  padding: 5px; /* Remove padding */
-  width: 24px; /* Set width for the copy icon */
+  background: transparent; 
+  border: none; 
+  padding: 5px;
+  width: 24px; 
 }
 
 .spacer {
-  height: 10px; /* Adjust the height as needed to shift the button down */
+  height: 10px;
 }
 
 .password-label {
-  display: flex; /* Flex layout for label and input */
-  align-items: center; /* Align items vertically */
-  margin-top: 1.5rem; /* Space above the label */
+  display: flex; 
+  align-items: center;
+  margin-top: 1.5rem;
 }
 
 .password-input {
-  width: 20ch; /* Width of about 20 characters */
-  border: 2px solid #39ff14; /* Neon green border */
-  border-radius: 0.375rem; /* Rounded corners */
-  background-color: #2a2d34; /* Dark background */
-  color: #ffffff; /* White text */
-  padding: 0.5rem; /* Padding inside the input */
-  margin-left: 1rem; /* Space between label and input */
-  font-size: 16px; /* Font size for input */
+  width: 20ch; 
+  border: 2px solid #39ff14; 
+  border-radius: 0.375rem;
+  background-color: #2a2d34;
+  color: #ffffff;
+  padding: 0.5rem;
+  margin-left: 1rem; 
+  font-size: 16px;
 }
 
 .password-checklist input[type="checkbox"] {
-  accent-color: green; /* This may change the checkbox color */
+  accent-color: green;
 }
 
 .password-container {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center items horizontally */
-  
+  flex-direction: column; 
+  align-items: center;
 }

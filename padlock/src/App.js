@@ -88,11 +88,12 @@ function App() {
 
   return (
     <div className="App-header flex items-center justify-center h-screen bg-black">
-      <h1 className="text-white font-bold">Padlock: Password Generator</h1>
-      <p className="text-white">Generate secure and memorable passwords</p>
       <div className="text-center">
-      
+        <h1 className="text-white font-bold">Padlock: Password Generator</h1>
+        <p className="text-white">Generate secure and memorable passwords</p>
+      </div>
 
+      <div className="text-center center-container">
         <div className="password-label text-white mt-4" style={{ fontSize: '16px' }}>
           Your Password: 
           <input 
