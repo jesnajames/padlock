@@ -117,7 +117,7 @@ function App() {
         </div>
 
         {/* Spacer for vertical alignment */}
-        <div className="spacer" />
+        <div className="spacer" style={{ height: '40' }} />
 
         {/* Generate password button */}
         <button 
@@ -128,9 +128,12 @@ function App() {
           Generate Password
         </button>
 
+        {/* Fixed height spacer for checklist */}
+        <div className="checklist-spacer" style={{ height: password ? '0' : '105px' }} />
+
         {/* Password checklist */}
-        <div className="password-checklist" style={{ color: 'white', fontSize: '12px', marginTop: '10px' }}>
-          {password && (
+        {password && (
+          <div className="password-checklist" style={{ color: 'white', fontSize: '12px', marginTop: '10px' }}>
             <>
               <div>
                 <input type="checkbox" checked={validatePassword(password).length} readOnly />
@@ -153,8 +156,8 @@ function App() {
                 At least one number
               </div>
             </>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
