@@ -17,9 +17,9 @@ function App() {
     "Sincere", "Thoughtful", "Valiant", "Warm", "Adventurous", 
     "Daring", "Gifted", "Spirited", "Luminous", "Flying",
   ];
-  
+
   const nouns = [
-    "Penguin", "Fox", "Wizard", "Otter", "Wolf", 
+    "Penguin", "Nomad", "Wizard", "Otter", "Wolf", 
     "Bear", "Tiger", "Dragon", "Eagle", "Hawk", 
     "Dolphin", "Cheetah", "Panther", "Phoenix", "Falcon", 
     "Elephant", "Lion", "Raven", "Mouse", "Whale", 
@@ -77,30 +77,32 @@ function App() {
     setPassword(secure_password);
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value); // Update password state on input change
-  };
-
   const copyToClipboard = () => {
     navigator.clipboard.writeText(password);
     alert('Password copied to clipboard!');
   };
 
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <div className="App-header flex items-center justify-center h-screen bg-black">
+      <h1 className="text-white font-bold">Padlock: Password Generator</h1>
+      <p className="text-white">Generate secure and memorable passwords</p>
       <div className="text-center">
-        {/* Label for password */}
-        <div className="password-label text-white" style={{ fontSize: '16px' }}>
+      
+
+        <div className="password-label text-white mt-4" style={{ fontSize: '16px' }}>
           Your Password: 
-          {/* Display password in an editable input box */}
           <input 
             type="text" 
             value={password} 
-            onChange={handlePasswordChange} // Update password on change
+            onChange={handlePasswordChange}
             className="password-input" 
             style={{ fontSize: '16px' }} 
             placeholder="************" 
-            title={`Think ${plaintext} to remember it better`}  // Tooltip
+            title={`Pro tip: Think ${plaintext}`}
           />
           <button className="copy-btn" onClick={copyToClipboard}>
             <img 
@@ -126,40 +128,32 @@ function App() {
         </button>
 
         {/* Password checklist */}
-        {password && (
-          <div className="password-checklist" style={{ color: 'white', fontSize: '12px', marginTop: '10px' }}>
-            <div>
-              <input type="checkbox" checked={validatePassword(password).length} style={{ 
-                accentColor: validatePassword(password).length ? 'green' : 'black' 
-              }} readOnly />
-              Length between 8-20 characters
-            </div>
-            <div>
-              <input type="checkbox" checked={validatePassword(password).hasLowerCase} style={{ 
-                accentColor: validatePassword(password).hasLowerCase ? 'green' : 'black' 
-              }} readOnly />
-              At least one lowercase letter
-            </div>
-            <div>
-              <input type="checkbox" checked={validatePassword(password).hasUpperCase} style={{ 
-                accentColor: validatePassword(password).hasUpperCase ? 'green' : 'black' 
-              }} readOnly />
-              At least one uppercase letter
-            </div>
-            <div>
-              <input type="checkbox" checked={validatePassword(password).hasSpecialChar} style={{ 
-                accentColor: validatePassword(password).hasSpecialChar ? 'green' : 'black' 
-              }} readOnly />
-              At least one special character
-            </div>
-            <div>
-              <input type="checkbox" checked={validatePassword(password).hasNumber} style={{ 
-                accentColor: validatePassword(password).hasNumber ? 'green' : 'black' 
-              }} readOnly />
-              At least one number
-            </div>
-          </div>
-        )}
+        <div className="password-checklist" style={{ color: 'white', fontSize: '12px', marginTop: '10px' }}>
+          {password && (
+            <>
+              <div>
+                <input type="checkbox" checked={validatePassword(password).length} readOnly />
+                Length between 8-20 characters
+              </div>
+              <div>
+                <input type="checkbox" checked={validatePassword(password).hasLowerCase} readOnly />
+                At least one lowercase letter
+              </div>
+              <div>
+                <input type="checkbox" checked={validatePassword(password).hasUpperCase} readOnly />
+                At least one uppercase letter
+              </div>
+              <div>
+                <input type="checkbox" checked={validatePassword(password).hasSpecialChar} readOnly />
+                At least one special character
+              </div>
+              <div>
+                <input type="checkbox" checked={validatePassword(password).hasNumber} readOnly />
+                At least one number
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
