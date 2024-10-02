@@ -46,6 +46,18 @@ function App() {
     "Z": "2",
   };
 
+  const validatePassword = (password) => {
+    const validations = {
+      length: password.length >= 8 && password.length <= 20,
+      hasLowerCase: /[a-z]/.test(password),
+      hasUpperCase: /[A-Z]/.test(password),
+      hasSpecialChar: /[!@#$%^&*(),.?":{}|<>]/.test(password),
+      hasNumber: /\d/.test(password)
+    };
+  
+    return validations;
+  };
+
   // Function to generate a secure password
   const generatePassword = () => {
     const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
@@ -62,6 +74,7 @@ function App() {
     console.log('Secure Password:', secure_password);
     setPlainText(plaintext_password);
     setPassword(secure_password);
+    validatePassword(password);
   };
 
   const copyToClipboard = () => {
@@ -107,6 +120,33 @@ function App() {
         >
           Generate Password
         </button>
+
+        {/* Password checklist */}
+        {password && (
+          <div className="password-checklist" style={{ color: 'white', fontSize: '12px', marginTop: '10px' }}>
+            <div>
+              <input type="checkbox" checked={validatePassword(password).length} readOnly />
+              Length between 8-20 characters
+            </div>
+            <div>
+              <input type="checkbox" checked={validatePassword(password).hasLowerCase} readOnly />
+              At least one lowercase letter
+            </div>
+            <div>
+              <input type="checkbox" checked={validatePassword(password).hasUpperCase} readOnly />
+              At least one uppercase letter
+            </div>
+            <div>
+              <input type="checkbox" checked={validatePassword(password).hasSpecialChar} readOnly />
+              At least one special character
+            </div>
+            <div>
+              <input type="checkbox" checked={validatePassword(password).hasNumber} readOnly />
+              At least one number
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );
