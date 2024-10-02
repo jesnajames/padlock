@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Snackbar, Button } from '@mui/material';
 
 function App() {
   const [password, setPassword] = useState('');
   const [plaintext, setPlainText] = useState('');
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const adjectives = [
     "Brave", "Curious", "Dynamic", "Loyal", "Friendly", 
@@ -79,11 +81,18 @@ function App() {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(password);
-    alert('Password copied to clipboard!');
+    setSnackbarOpen(true); // Open the snackbar when password is copied
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+  };
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSnackbarOpen(false);
   };
 
   return (
@@ -159,6 +168,18 @@ function App() {
           </div>
         )}
       </div>
+
+      <Snackbar
+        open={snackbarOpen}
+        onClose={handleSnackbarClose}
+        message="Copied to clipboard!"
+        action={
+          <Button color="inherit" onClick={handleSnackbarClose}>
+            Close
+          </Button>
+        }
+        autoHideDuration={800}
+      />
     </div>
   );
 }
