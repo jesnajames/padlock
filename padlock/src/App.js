@@ -17,11 +17,12 @@ function App() {
     "Courageous", "Elegant", "Calm", "Honest", "Imaginative", 
     "Motivated", "Jovial", "Persistent", "Polite", "Roving", 
     "Sincere", "Thoughtful", "Valiant", "Warm", "Adventurous", 
-    "Daring", "Gifted", "Spirited", "Luminous", "Flying",
+    "Daring", "Gifted", "Spirited", "Luminous", "Flying", "Digital",
+    "Peculiar", "Spectacular", "Soothing", "Stunning"
   ];
 
   const nouns = [
-    "Penguin", "Nomad", "Wizard", "Otter", "Wolf", 
+    "Penguin", "Nomad", "Wizard", "Coder", "Otter", "Wolf", 
     "Bear", "Tiger", "Dragon", "Eagle", "Hawk", 
     "Dolphin", "Cheetah", "Panther", "Phoenix", "Falcon", 
     "Elephant", "Lion", "Raven", "Mouse", "Whale", 
@@ -30,7 +31,8 @@ function App() {
     "Parrot", "Cobra", "Swan", "Explorer", "Gazelle", 
     "Moose", "Bison", "Crane", "Squirrel", "Giraffe", 
     "Llama", "Zebra", "Ostrich", "Antelope", "Rabbit", 
-    "Hippo", "Soldier", "Guardian", "Jaguar"
+    "Hippo", "Soldier", "Guardian", "Jaguar", "Turtle", 
+    "Sloth", "Cheetah", "Hare", "Frog"
   ];
 
   const crypt_mapper = {
@@ -101,28 +103,33 @@ function App() {
         <h1 className="text-white font-bold">Padlock: Password Generator</h1>
         <p className="text-white">Generate secure and memorable passwords</p>
       </div>
-
       <div className="text-center center-container">
-        <div className="password-label text-white mt-4" style={{ fontSize: '16px' }}>
-          Your Password: 
-          <input 
-            type="text" 
-            value={password} 
-            onChange={handlePasswordChange}
-            className="password-input" 
-            style={{ fontSize: '16px' }} 
-            placeholder="************" 
-            title={`Pro tip: Think ${plaintext}`}
-          />
-          <button className="copy-btn" onClick={copyToClipboard}>
-            <img 
-              src="/clipboard-3-xxl.png" 
-              alt="Copy to Clipboard" 
-              className="h-6 w-6 cursor-pointer transition-transform duration-200 hover:scale-110"
-              width={5}
-              height={24}
+        <div className="password-container">
+          <div className="password-label text-white mt-4" style={{ fontSize: '16px' }}>
+            Your Password:
+            <input
+              type="text"
+              value={password}
+              onChange={handlePasswordChange}
+              className="password-input"
+              style={{ fontSize: '16px' }}
+              placeholder="************"
             />
-          </button>
+            <button className="copy-btn" onClick={copyToClipboard}>
+              <img
+                src="/clipboard-3-xxl.png"
+                alt="Copy to Clipboard"
+                className="h-6 w-6 cursor-pointer transition-transform duration-200 hover:scale-110"
+                width={5}
+                height={24}
+              />
+            </button>
+          </div>
+          {password && (
+            <span className="text-white mt-2" style={{ fontSize: '12px', marginLeft: '80px'}}>
+              Memory tip: Think <b>{plaintext}</b>
+            </span>
+          )}
         </div>
 
         {/* Spacer for vertical alignment */}
