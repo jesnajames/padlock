@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Snackbar, Button } from '@mui/material';
-
+import { Analytics } from "@vercel/analytics/react"
 function App() {
   const [password, setPassword] = useState('');
   const [plaintext, setPlainText] = useState('');
