@@ -98,7 +98,10 @@ function App() {
   };
 
   return (
+    
     <div className="App-header flex items-center justify-center h-screen bg-black">
+      
+      <Analytics />
       <div className="text-center">
         <h1 className="text-white font-bold">Padlock: Password Generator</h1>
         <p className="text-white">Generate secure and memorable passwords</p>
@@ -188,6 +191,7 @@ function App() {
         autoHideDuration={800}
       />
     </div>
+    
   );
 }
 
